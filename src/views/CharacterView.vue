@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import SearchBar from '@/components/SearchBar.vue'
-import CardComponent from '@/components/CardComponent.vue'
+import CardList from '@/components/CardList.vue'
+import { useCharactersStore } from '@/stores/charactersStore'
+
+const characterStore = useCharactersStore()
+onMounted(() => {
+  characterStore.fetchCharacters()
+})
 </script>
 <template>
   <SearchBar />
-  <CardComponent />
+  <CardList />
 </template>
 
 <style scoped></style>

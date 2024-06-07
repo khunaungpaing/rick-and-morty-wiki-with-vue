@@ -1,9 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useCharactersStore } from '@/stores/charactersStore'
+import { storeToRefs } from 'pinia'
+import { watch } from 'vue'
+
+const store = useCharactersStore()
+const { search } = storeToRefs(store)
+watch(search, () => {
+  store.fetchCharacters()
+})
+</script>
 <template>
   <section class="filter-section">
     <div class="search-wrapper">
       <i class="bx bx-search"></i>
-      <input type="text" placeholder="Search" />
+      <input type="text" placeholder="Search" v-model="search" />
     </div>
   </section>
 </template>

@@ -1,9 +1,20 @@
+<script setup lang="ts">
+import type { Character } from '@/stores/types'
+import type { PropType } from 'vue'
+const props = defineProps({
+  character: {
+    type: Object as PropType<Character>,
+    required: true,
+    default: null
+  }
+})
+</script>
 <template>
   <section class="card-wrapper">
-    <img src="../assets/logo.svg" alt="img" width="300" height="300" />
+    <img :src="character.image" alt="img" width="300" height="300" />
     <div class="card-body">
-      <h1 class="card-title">Card Title</h1>
-      <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      <h1 class="card-title">{{ character.name }}</h1>
+      <p class="card-text">Last location : {{ character.location.name }}</p>
     </div>
   </section>
 </template>
@@ -11,6 +22,7 @@
 <style scoped>
 .card-wrapper {
   max-width: 310px;
+  height: 100%;
   border: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
@@ -26,11 +38,13 @@
 
 .card-wrapper img {
   object-fit: cover;
-  border-radius: 0.4rem;
+  border-radius: 0.4rem 0.4rem 0 0;
 }
 
 .card-body {
   display: flex;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   padding: 0.2em 1em 1em 1em;
   border-radius: 0 0 0.3rem 0.3rem;
