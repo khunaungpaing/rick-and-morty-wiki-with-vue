@@ -25,7 +25,7 @@ const themeLabel = computed(() =>
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Characters</RouterLink>
+        <RouterLink to="/character">Characters</RouterLink>
         <RouterLink to="/episodes">Episodes</RouterLink>
         <RouterLink to="/locations">Locations</RouterLink>
         <div class="mode-btn" @click="toggleTheme" v-html="themeLabel"></div>

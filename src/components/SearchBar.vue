@@ -4,9 +4,15 @@ import { storeToRefs } from 'pinia'
 import { watch } from 'vue'
 
 const store = useCharactersStore()
-const { search } = storeToRefs(store)
+const { search, status, gender } = storeToRefs(store)
 watch(search, () => {
-  store.fetchCharacters()
+  store.fetchCharacters(null)
+})
+watch(status, () => {
+  store.fetchCharacters(null)
+})
+watch(gender, () => {
+  store.fetchCharacters(null)
 })
 </script>
 <template>
@@ -15,6 +21,25 @@ watch(search, () => {
       <i class="bx bx-search"></i>
       <input type="text" placeholder="Search" v-model="search" />
     </div>
+    <!--filter-->
+    <div class="filter-item">
+      <span>Gender </span>
+      <select v-model="gender">
+        <option value="">All</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+    <div class="filter-item">
+      <span>Status </span>
+      <select v-model="status">
+        <option value="">All</option>
+        <option value="Alive">Alive</option>
+        <option value="Dead">Dead</option>
+        <option value="Unknown">Unknown</option>
+      </select>
+    </div>
+    <!--end filter-->
   </section>
 </template>
 
@@ -25,6 +50,7 @@ watch(search, () => {
   justify-content: end;
   flex-direction: row-reverse;
   margin-top: 1em;
+  gap: 1em;
 }
 
 .search-wrapper {
@@ -51,5 +77,15 @@ watch(search, () => {
   transform: translateY(-50%);
   font-size: 1.2rem;
   color: var(--color-text);
+}
+.filter-item select {
+  padding: 0.8em 0.8em 0.8em 1em;
+  border: 1px solid var(--color-background);
+  border-radius: 0.5em;
+  outline: none;
+  background-color: var(--color-background-mute);
+  color: var(--color-text);
+  font-size: 1rem;
+  width: 10em;
 }
 </style>

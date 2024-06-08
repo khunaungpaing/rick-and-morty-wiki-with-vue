@@ -9,6 +9,10 @@
 
   --vt-c-indigo: #2c3e50;
 
+  --vt-c-danger: #f80000;
+  --vt-c-success: #08b511;
+  --vt-c-warning: #e9bd0d;
+
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
   --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
@@ -95,4 +99,43 @@ a:hover {
   transition:
     color 0.5s,
     background-color 0;
+}
+
+.Dead {
+  background-color: var(--vt-c-danger);
+}
+.Alive {
+  background-color: var(--vt-c-success);
+}
+.unknown {
+  background-color: var(--vt-c-warning);
+}
+
+.loader {
+  border: 16px solid var(--color-background-mute);
+  border-radius: 50%;
+  border-top: 16px solid var(--color-text);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
