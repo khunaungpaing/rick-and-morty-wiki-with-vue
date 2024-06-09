@@ -25,7 +25,7 @@ const goToDetails = () => {
     </div>
     <div class="card-body">
       <h1 class="card-title">{{ character.name }}</h1>
-      <p class="card-text"><i class="bx bx-current-location"></i> {{ character.location.name }}</p>
+      <p class="card-text"><i class="bx bx-current-location"></i> {{ character.location?.name }}</p>
     </div>
   </section>
 </template>
