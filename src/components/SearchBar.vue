@@ -4,15 +4,19 @@ import { storeToRefs } from 'pinia'
 import { watch } from 'vue'
 
 const store = useCharactersStore()
-const { search, status, gender } = storeToRefs(store)
+const { search, status, gender, species } = storeToRefs(store)
+
 watch(search, () => {
-  store.fetchCharacters(null)
+  store.fetchUrl(null)
 })
 watch(status, () => {
-  store.fetchCharacters(null)
+  store.fetchUrl(null)
 })
 watch(gender, () => {
-  store.fetchCharacters(null)
+  store.fetchUrl(null)
+})
+watch(species, () => {
+  store.fetchUrl(null)
 })
 </script>
 <template>
@@ -22,6 +26,17 @@ watch(gender, () => {
       <input type="text" placeholder="Search" v-model="search" />
     </div>
     <!--filter-->
+    <div class="filter-item">
+      <span>Species </span>
+      <select v-model="species">
+        <option value="">All</option>
+        <option value="Human">Human</option>
+        <option value="Mytholog">Mytholog</option>
+        <option value="Alien">Alien</option>
+        <option value="Animal">Animal</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
     <div class="filter-item">
       <span>Gender </span>
       <select v-model="gender">
