@@ -49,10 +49,10 @@ Once the development server is running, you can access the application at http:/
    ![image](https://github.com/khunaungpaing/rick-and-morty-wiki-with-vue/blob/main/screenshots/a.png)
 
    2.details-page
-   ![image](https://github.com/khunaungpaing/rick-and-morty-wiki-with-vue/blob/main/screenshots/a.png)
+   ![image](https://github.com/khunaungpaing/rick-and-morty-wiki-with-vue/blob/main/screenshots/b.png)
 
    3.mobile-view
-   ![image](https://github.com/khunaungpaing/rick-and-morty-wiki-with-vue/blob/main/screenshots/a.png)
+   ![image](https://github.com/khunaungpaing/rick-and-morty-wiki-with-vue/blob/main/screenshots/c.png)
 
 7. **Contributing**
 Contributions are welcome! Please feel free to submit a Pull Request.
