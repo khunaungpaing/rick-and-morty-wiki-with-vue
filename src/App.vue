@@ -1,8 +1,17 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
+import { useCharactersStore } from '@/stores/charactersStore'
+import { storeToRefs } from 'pinia'
 
 const theme = ref<string>(localStorage.getItem('theme') || 'dark')
+const store = useCharactersStore()
+const { search, pageNumber } = storeToRefs(store)
+
+watch(search, () => {
+  pageNumber.value = 1
+  store.fetchUrl(null)
+})
 
 onMounted(() => {
   document.documentElement.setAttribute('data-theme', theme.value)
@@ -22,15 +31,12 @@ const themeLabel = computed(() =>
 <template>
   <header>
     <RouterLink to="/" class="LOGO">RICK & MORTY <span class="bold">WIKI</span></RouterLink>
-
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/characters">Characters</RouterLink>
-        <RouterLink to="/episodes">Episodes</RouterLink>
-        <RouterLink to="/locations">Locations</RouterLink>
-        <div class="mode-btn" @click="toggleTheme" v-html="themeLabel"></div>
-      </nav>
+    <RouterLink to="/" class="LOGO1">R&M<span class="bold">WIKI</span></RouterLink>
+    <div class="search-wrapper">
+      <i class="bx bx-search"></i>
+      <input type="text" placeholder="Search" v-model="search" />
     </div>
+    <div class="mode-btn" @click="toggleTheme" v-html="themeLabel"></div>
   </header>
 
   <RouterView />
@@ -49,6 +55,7 @@ header {
   text-transform: uppercase;
   text-align: center;
   margin-top: 1em;
+  box-shadow: 0.1em 0.2em 0.1em var(--color-shadow);
   border-radius: 0.5rem;
 }
 .wrapper nav {
@@ -61,11 +68,81 @@ header {
   font-size: 2rem;
   text-decoration: none;
 }
+.LOGO1 {
+  display: none;
+}
 .bold {
   font-weight: bold;
 }
 .mode-btn {
   font-size: 1.3rem;
   cursor: pointer;
+}
+
+.search-wrapper {
+  position: relative;
+}
+.search-wrapper input {
+  padding-block: 0.8em;
+  padding-left: 3em;
+  padding-right: 0.8em;
+  border: 1px solid var(--color-background);
+  border-radius: 0.5em;
+  outline: none;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: 1rem;
+  min-width: 15em;
+  width: 20em;
+  box-shadow: inset 0.1em 0.1em var(--color-shadow);
+}
+.search-wrapper i {
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .LOGO {
+    display: none;
+  }
+  .LOGO1 {
+    display: block;
+    font-size: 1.5rem;
+  }
+  .search-wrapper input {
+    padding-block: 0.8em;
+    padding-left: 2em;
+    padding-right: 0.3em;
+    border: 1px solid var(--color-background);
+    border-radius: 0.4em;
+    outline: none;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: 0.8rem;
+    min-width: 100%;
+    width: 100%;
+    box-shadow: inset 0.1em 0.1em var(--color-shadow);
+  }
+  .search-wrapper i {
+    top: 50%;
+    left: 0.7em;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--color-text);
+  }
+}
+
+@media (max-width: 375px) {
+  .LOGO {
+    display: none;
+  }
+  .LOGO1 {
+    display: block;
+    font-size: 1rem;
+  }
 }
 </style>

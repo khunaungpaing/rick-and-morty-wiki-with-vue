@@ -2,7 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import type { ApiResponse, PaginationInfo, Character } from './types'
 import axios from 'axios'
-import type { AxiosResponse } from 'axios'
+import type { AxiosResponse, AxiosError } from 'axios'
 
 export const useCharactersStore = defineStore('character', () => {
   // State properties
@@ -18,7 +18,6 @@ export const useCharactersStore = defineStore('character', () => {
   const paginationInfo = computed(() => apiResponse.value.info as PaginationInfo) //ref<PaginationInfo>({} as PaginationInfo)
 
   const fetchUrl = async (url: string | null): Promise<void> => {
-    if (isFetching.value) return
     isFetching.value = true
     try {
       const uri: string = `https://rickandmortyapi.com/api/character/?page=${pageNumber.value}&name=${search.value}&status=${status.value}&gender=${gender.value}&species=${species.value}`
@@ -27,11 +26,17 @@ export const useCharactersStore = defineStore('character', () => {
         apiResponse.value = response.data as ApiResponse
       } else if (response.status === 404) {
         console.log('No data found')
+        apiResponse.value = {} as ApiResponse
       } else {
         console.log('Unexpected response status:', response.status)
       }
     } catch (err) {
-      console.error('An error occurred:', err)
+      console.log('An error occurred:', err)
+      const e = err as AxiosError
+      if (e.response?.status == 404) {
+        console.log('No data found')
+        apiResponse.value = {} as ApiResponse
+      }
     } finally {
       isFetching.value = false
     }

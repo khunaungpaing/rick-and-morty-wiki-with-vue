@@ -31,17 +31,6 @@ const goToDetails = () => {
 </template>
 
 <style scoped>
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 .card-wrapper {
   position: relative;
   max-width: 310px;
@@ -54,6 +43,7 @@ const goToDetails = () => {
   justify-content: center;
   border-radius: 0.5rem;
   padding: 0.2rem;
+  box-shadow: 0.1em 0.2em 0.1em var(--color-shadow);
   animation: fadeInUp 0.6s ease-out;
   transition:
     transform 0.3s ease-in-out,
@@ -62,7 +52,7 @@ const goToDetails = () => {
 
 .card-wrapper:hover {
   transform: scale(1.02);
-  box-shadow: 0.2rem 0.2rem 0.2rem var(--color-shadow);
+  box-shadow: 0.8rem 0.8rem 0.8rem var(--color-shadow);
 }
 .card-wrapper .badge {
   position: absolute;

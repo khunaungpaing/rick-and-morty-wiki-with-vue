@@ -13,6 +13,7 @@ onBeforeMount(() => {
 })
 </script>
 <template>
+  <PaginationComponent />
   <SearchBar />
   <CardList />
   <PaginationComponent />
