@@ -29,20 +29,26 @@ const themeLabel = computed(() =>
 </script>
 
 <template>
-  <header>
-    <RouterLink to="/" class="LOGO">RICK & MORTY <span class="bold">WIKI</span></RouterLink>
-    <RouterLink to="/" class="LOGO1">R&M<span class="bold">WIKI</span></RouterLink>
-    <div class="search-wrapper">
-      <i class="bx bx-search"></i>
-      <input type="text" placeholder="Search" v-model="search" />
-    </div>
-    <div class="mode-btn" @click="toggleTheme" v-html="themeLabel"></div>
-  </header>
+  <section class="container">
+    <header>
+      <RouterLink to="/" class="LOGO">RICK & MORTY <span class="bold">WIKI</span></RouterLink>
+      <RouterLink to="/" class="LOGO1">R&M<span class="bold">WIKI</span></RouterLink>
+      <div class="search-wrapper">
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="Search" v-model="search" />
+      </div>
+      <div class="mode-btn" @click="toggleTheme" v-html="themeLabel"></div>
+    </header>
 
-  <RouterView />
+    <RouterView />
+  </section>
 </template>
 
 <style scoped>
+.container {
+  margin: 0 2rem;
+}
+
 header {
   height: 5em;
   display: flex;

@@ -43,10 +43,9 @@ const fetchData = async () => {
 
 <style scoped>
 main {
-  display: grid;
+  display: flex;
   margin-top: 2em;
   gap: 1rem;
-  grid-template-columns: repeat(2, minmax(300px, 350px));
   justify-content: center;
   align-items: center;
 }
@@ -70,16 +69,9 @@ main img {
   border-radius: 0.2rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   main {
-    grid-template-columns: repeat(1, minmax(300px, 350px));
-  }
-}
-
-/* Styles for screens 768px and larger */
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: repeat(2, minmax(300px, 350px));
+    flex-direction: column;
   }
 }
 </style>

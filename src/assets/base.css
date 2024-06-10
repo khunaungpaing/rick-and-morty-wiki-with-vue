@@ -85,8 +85,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-inline: 2em;
-  min-width: 360px;
+  min-width: 340px;
+  margin: 0 auto;
 }
 
 a {

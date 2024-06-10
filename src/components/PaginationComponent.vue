@@ -93,7 +93,6 @@ const goToPreviousPage = () => {
 <style scoped>
 /*pagination*/
 .container {
-  overflow-x: scroll;
   margin-block: 1em;
   animation: fadeInUp 0.6s ease-out;
   transition:
@@ -102,6 +101,7 @@ const goToPreviousPage = () => {
 }
 
 .container .pagination {
+  overflow-x: scroll;
   position: relative;
   height: 60px;
   background: var(--color-background);
@@ -135,5 +135,13 @@ const goToPreviousPage = () => {
 .container .pagination li button.disabled {
   pointer-events: none;
   color: var(--color-disabled);
+}
+
+@media (max-width: 768px) {
+  .container .pagination {
+    margin: 0 !important;
+    padding: 0 !important;
+    justify-content: flex-start;
+  }
 }
 </style>
