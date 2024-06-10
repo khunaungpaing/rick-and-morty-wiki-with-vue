@@ -1,45 +1,56 @@
-# rick-and-morty-wiki
+# Rick and Morty Vue App
 
-This template should help get you started developing with Vue 3 in Vite.
+This repository contains a Vue 3 application developed using TypeScript that fetches data from the Rick and Morty API. The application includes features such as character search, filtering, pagination, dark mode, and responsive design.
 
-## Recommended IDE Setup
+## Table of Contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshot](#screenshot)
+- [Contributing](#contributing)
 
-## Type Support for `.vue` Imports in TS
+## Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Search**: Search for characters by name.
+- **Filter**: Filter characters by status, species, and gender.
+- **Pagination**: Navigate through pages of characters.
+- **Dark Mode**: Toggle between light and dark themes.
+- **Responsive Design**: Optimized for various screen sizes.
 
-## Customize configuration
+## Installation
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+1. **Clone the repository**:
 
-## Project Setup
+   ```sh
+   git clone https://github.com/yourusername/rick-and-morty-vue-app.git
+   cd rick-and-morty-vue-app
 
-```sh
-npm install
-```
+2. **Install dependencies:
 
-### Compile and Hot-Reload for Development
+   ```sh
+   npm install
 
-```sh
-npm run dev
-```
+3. **Run the development server:
 
-### Type-Check, Compile and Minify for Production
+   ```sh
+   npm run dev
+   
+4. **Build for production:
 
-```sh
-npm run build
-```
+   ```sh
+    npm run build
+   
+5. **Usage
+Once the development server is running, you can access the application at http://localhost:3000. The app allows you to search for characters, filter them based on various criteria, and navigate through pages of results. You can also switch between light and dark modes using the toggle button.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Screenshots
 
-```sh
-npm run test:unit
-```
+6. **Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Fork the repository.
+Create a new branch (`git checkout -b feature/your-feature`).
+Commit your changes (`git commit -am 'Add new feature'`).
+Push to the branch (`git push origin feature/your-feature`).
+Create a new Pull Request.
