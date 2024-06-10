@@ -42,6 +42,7 @@ This repository contains a Vue 3 application developed using TypeScript that fet
     npm run build
    
 **Usage**
+
 Once the development server is running, you can access the application at http://localhost:3000. The app allows you to search for characters, filter them based on various criteria, and navigate through pages of results. You can also switch between light and dark modes using the toggle button.
 
 5. **Screenshots**
