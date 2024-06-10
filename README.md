@@ -26,27 +26,35 @@ This repository contains a Vue 3 application developed using TypeScript that fet
    git clone https://github.com/yourusername/rick-and-morty-vue-app.git
    cd rick-and-morty-vue-app
 
-2. **Install dependencies:
+2. **Install dependencies**:
 
    ```sh
    npm install
 
-3. **Run the development server:
+3. **Run the development server**:
 
    ```sh
    npm run dev
    
-4. **Build for production:
+4. **Build for production**:
 
    ```sh
     npm run build
    
-5. **Usage
+**Usage**
 Once the development server is running, you can access the application at http://localhost:3000. The app allows you to search for characters, filter them based on various criteria, and navigate through pages of results. You can also switch between light and dark modes using the toggle button.
 
-Screenshots
+5. **Screenshots**
+   1.home-page
+   ![image](https://github.com/khunaungpaing/rick-and-morty-wiki-with-vue/blob/main/screenshots/a.png)
 
-6. **Contributing
+   2.details-page
+   ![image](https://github.com/khunaungpaing/rick-and-morty-wiki-with-vue/blob/main/screenshots/a.png)
+
+   3.mobile-view
+   ![image](https://github.com/khunaungpaing/rick-and-morty-wiki-with-vue/blob/main/screenshots/a.png)
+
+7. **Contributing**
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 Fork the repository.
