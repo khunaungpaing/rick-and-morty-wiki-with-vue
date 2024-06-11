@@ -51,13 +51,13 @@ const goToPage = (page: number) => {
 
 const goToNextPage = () => {
   if (!paginationInfo.value.next) return
-  pageNumber.value = getPageNumber(paginationInfo.value.next, true)
+  pageNumber.value = getPageNumber(paginationInfo.value.next, true) + 1
   store.fetchUrl(null)
 }
 
 const goToPreviousPage = () => {
   if (!paginationInfo.value.prev) return
-  pageNumber.value = getPageNumber(paginationInfo.value.prev, false)
+  pageNumber.value = getPageNumber(paginationInfo.value.prev, false) - 1
   store.fetchUrl(null)
 }
 </script>
