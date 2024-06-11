@@ -36,6 +36,15 @@ export const useCharactersStore = defineStore('character', () => {
       if (e.response?.status == 404) {
         console.log('No data found')
         apiResponse.value = {} as ApiResponse
+        if (
+          search.value === '' &&
+          status.value === '' &&
+          gender.value === '' &&
+          species.value === '' &&
+          apiResponse.value == ({} as ApiResponse)
+        ) {
+          fetchUrl(null)
+        }
       }
     } finally {
       isFetching.value = false

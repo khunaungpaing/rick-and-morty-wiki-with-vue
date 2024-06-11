@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import CharacterView from '@/views/CharacterView.vue'
 import CardDetails from '@/views/CardDetails.vue'
+import NotFound from '@/views/NotFound.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
       name: 'CardDetails',
       component: CardDetails,
       props: (route) => ({ id: Number(route.params.id) })
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'NotFound',
+      component: NotFound
     }
   ]
 })

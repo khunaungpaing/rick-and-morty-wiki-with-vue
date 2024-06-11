@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onBeforeMount, ref } from 'vue'
-import SearchBar from '@/components/SearchBar.vue'
+import FilterBar from '@/components/FilterBar.vue'
 import { useCharactersStore } from '@/stores/charactersStore'
 import CardList from '@/components/CardList.vue'
 import PaginationComponent from '@/components/PaginationComponent.vue'
@@ -14,7 +14,7 @@ onBeforeMount(() => {
 </script>
 <template>
   <PaginationComponent />
-  <SearchBar />
+  <FilterBar />
   <CardList />
   <PaginationComponent />
 </template>

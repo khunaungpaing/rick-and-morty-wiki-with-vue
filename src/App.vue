@@ -76,6 +76,7 @@ header {
 }
 .LOGO1 {
   display: none;
+  font-size: clamp(0.7rem, 1rem, 1.5rem);
 }
 .bold {
   font-weight: bold;
@@ -117,7 +118,6 @@ header {
   }
   .LOGO1 {
     display: block;
-    font-size: 1.5rem;
   }
   .search-wrapper input {
     padding-block: 0.8em;
@@ -145,10 +145,6 @@ header {
 @media (max-width: 375px) {
   .LOGO {
     display: none;
-  }
-  .LOGO1 {
-    display: block;
-    font-size: 1rem;
   }
 }
 </style>
